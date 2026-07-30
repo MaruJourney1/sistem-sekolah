@@ -18,19 +18,49 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     public function index() {
-        return "Menampilkan halaman daftar siswa";
+        $title = 'Sistem Sekolah-Daftar Siswa';
+        $students = [
+            [
+                'id' => '1',
+                'nis' => '1001',
+                'name' => 'Mari',
+                'class' => 'XII TKJ 1',
+                'major' => 'TKJ'
+            ],
+
+            [
+                'id' => '2',
+                'nis' => '2001',
+                'name' => 'Maru',
+                'class' => 'XII TKJ 2',
+                'major' => 'TKJ'
+            ],
+        ];
+        return view('students.index', [
+            'title' => $title,
+            'students' => $students
+        ]);
     }
 
     public function show(string $id) {
-        return "Menampilkan siswa dengan ID: $id";
+        $title = 'Sistem Sekolah-Lembar Siswa';
+        return view('students.show', [
+            'title' => $title,
+        ]);
     }
 
     public function create() {
-        return "Menampilkan halaman tambah siswa";
+        $title = 'Sistem Sekolah-Catat Siswa Baru';
+        return view('students.create', [
+            'title' => $title,
+        ]);
     }
 
     public function edit(string $id) {
-        return "Menampilkan halaman edit siswa";
+        $title = 'Sistem Sekolah-Ubah Data Siswa';
+        return view('students.edit', [
+            'title' => $title,
+        ]);
     }
 
     public function store() {
