@@ -43,9 +43,9 @@ class StudentController extends Controller
     }
 
     public function show(string $id) {
-        $title = 'Sistem Sekolah-Lembar Siswa';
+        $title = 'Sistem Sekolah-Lembar siswa';
         return view('students.show', [
-            'title' => $title,
+            'title' => $title
         ]);
     }
 

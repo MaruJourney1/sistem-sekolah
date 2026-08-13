@@ -7,8 +7,11 @@ use Illuminate\Http\Request;
 
 class EditController extends Controller
 {
-    public function __invoke($id)
+    public function __invoke(string $id)
     {
-        return "Menampilkan halaman edit untuk ID: {$id}";
+        $title = 'Sistem Sekolah-Ubah Data Kelas';
+        return view('classes.edit', [
+            'title' => $title,
+        ]);
     }
 }

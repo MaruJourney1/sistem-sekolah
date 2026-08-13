@@ -9,6 +9,10 @@ class CreateController extends Controller
 {
     public function __invoke()
     {
-        return "Menampilkan halaman tambah kelas";
+        $title = 'Sistem Sekolah-Catat Kelas Baru';
+
+        return view('classes.create', [
+            'title' => $title
+        ]);
     }
 }

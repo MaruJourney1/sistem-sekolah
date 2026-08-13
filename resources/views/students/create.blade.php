@@ -2,7 +2,6 @@
 
 @section('title', $title)
 
-
 @section('content')
 
 

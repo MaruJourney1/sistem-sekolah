@@ -6,20 +6,60 @@ use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {
+    private function getTeachersData()
+    {
+        return [
+            [
+                'id' => 1,
+                'nip' => '198501012024',
+                'name' => 'Budi Santoso',
+                'gender' => 'Laki-Laki',
+                'subject' => 'Akuntansi Dasar',
+                'phone_number' => '081234560001',
+                'status' => 'Aktif',
+            ],
+            [
+                'id' => 2,
+                'nip' => '198703152024',
+                'name' => 'Siti Aminah',
+                'gender' => 'Perempuan',
+                'subject' => 'Jaringan Komputer',
+                'phone_number' => '081234560002',
+                'status' => 'Aktif',
+            ]
+        ];
+    }
+
     public function index() {
-        return "Menampilkan halaman daftar guru";
+        $title = 'Sistem Sekolah-Daftar Guru';
+        $teachers = $this->getTeachersData();
+
+
+        return view('teachers.index', [
+            'title' => $title,
+            'teachers' => $teachers
+        ]);
     }
 
     public function show(string $id) {
-        return "Menampilkan guru dengan ID: $id";
+        $title = 'Sistem Sekolah-Lembar Guru';
+        return view('teachers.show', [
+            'title' => $title,
+        ]);
     }
 
     public function create() {
-        return "Menampilkan halaman tambah guru";
+        $title = 'Sistem Sekolah-Catat Guru Baru';
+        return view('teachers.create', [
+            'title' => $title,
+        ]);
     }
 
     public function edit(string $id) {
-        return "Menampilkan halaman edit guru";
+        $title = 'Sistem Sekolah-Ubah Data Guru';
+        return view('teachers.edit', [
+            'title' => $title,
+        ]);
     }
 
     public function store() {
