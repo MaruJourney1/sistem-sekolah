@@ -44,7 +44,7 @@
 
                    class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Tingkat</label> 
 
-               <select id="gender" name="gender" 
+               <select id="grade" name="grade" 
 
                    class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none"> 
 
@@ -60,11 +60,11 @@
 
             <div> 
 
-              <label for="major" 
+              <label for="major_id" 
 
                    class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Jurusan</label> 
 
-              <select id="major" name="major" 
+              <select id="major_id" name="major_id" 
 
                    class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none"> 
 
@@ -82,11 +82,11 @@
 
             <div> 
 
-              <label for="homeroon" 
+              <label for="teacher_id" 
 
-                   class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Jurusan</label> 
+                   class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Wali Kelas</label> 
 
-              <select id="homeroom" name="homeroom" 
+              <select id="teacher_id" name="teacher_id" 
 
                    class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none"> 
 

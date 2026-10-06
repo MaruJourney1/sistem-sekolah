@@ -4,10 +4,6 @@
 
 @section('content')
 
-<x-alert type="WARNING">
-    Ada Guru yang sedang tidak aktif
-  </x-alert>
-
 <a href="#" class="text-xs uppercase tracking-[0.15em] text-slate-400 hover:text-[#A16207]">&larr; Buku 
 
             Induk</a> 
@@ -77,6 +73,13 @@
                    <dd class="font-medium text-[#16213A]">081234560001</dd> 
 
               </div> 
+
+              <div class="flex justify-between px-8 py-4"> 
+               <dt class="uppercase tracking-[0.1em] text-xs text-slate-400">Status</dt> 
+                    <dd class="font-medium text-[#16213A]">
+                         <x-status-badge status="aktif" />
+                    </dd> 
+               </div>
 
             </dl> 
 

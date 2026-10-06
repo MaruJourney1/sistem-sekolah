@@ -30,7 +30,7 @@
 
                    class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Kode</label> 
 
-              <input type="text" id="kode" name="kode" value="TKJ" 
+              <input type="text" id="code" name="code" value="TKJ" 
 
                    class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none"> 
 
@@ -54,16 +54,11 @@
  
 
             <div> 
-
-              <label for="description" 
-
-                   class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Deskripsi</label> 
-
-              <input type="textarea" id="description" name="description" value="Program keahlian yang membekali murid dengan kompetensi instalasi, konfigurasi, dan pemeliharaan jaringan komputer." 
-
-                   class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none"> 
-
-            </div> 
+               <label for="description" 
+                    class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Deskripsi</label> 
+               <textarea id="description" name="description" rows="4" 
+                    class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">Program keahlian yang membekali murid dengan kompetensi instalasi, konfigurasi, dan pemeliharaan jaringan komputer.</textarea> 
+          </div>
 
  
 

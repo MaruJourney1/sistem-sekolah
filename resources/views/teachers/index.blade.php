@@ -84,9 +84,9 @@
                         {{ $teacher['phone_number'] }}
                        </td> 
 
-                       <td class="px-5 py-4">
-                        {{ $teacher['status'] }}
-                       </td> 
+                       <td>
+                        <x-status-badge :status="$teacher['status']" />
+                       </td>
 
                        <td class="px-5 py-4"> 
 

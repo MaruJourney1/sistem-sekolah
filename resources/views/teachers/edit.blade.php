@@ -30,7 +30,7 @@
 
                    class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">NIP</label> 
 
-              <input type="text" id="nis" name="nis" placeholder="Contoh: 2024010" 
+              <input type="text" id="nip" name="nip" placeholder="Contoh: 2024010" 
 
                    class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm placeholder:text-slate-400 focus:border-[#A16207] focus:bg-white focus:outline-none"> 
 
@@ -82,7 +82,7 @@
 
                    class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Mata Pelajaran</label> 
 
-              <select id="subject" name="sucject" 
+              <select id="subject" name="subject" 
 
                    class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none"> 
 
