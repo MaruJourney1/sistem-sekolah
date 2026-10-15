@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\SchoolClass;
@@ -17,6 +18,13 @@ Route::get('/', function () {
 //     Route::get('/{id}', [StudentController::class,'show'])->name('show');
 
 // });
+
+// Authentication
+Route::get('/login', [AuthController::class, 'loginView'])->name('login-view');
+Route::post('/login', [AuthController::class, 'loginPost'])->name('login-post');
+Route::get('/register', [AuthController::class, 'registerView'])->name('register-view');
+Route::post('/register', [AuthController::class, 'registerView'])->name('register-post');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::name('students.')->prefix('students')->group(function(){
 
