@@ -5,6 +5,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\SchoolClass;
 use App\Http\Controllers\MajorController;
+use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,13 +21,13 @@ Route::get('/', function () {
 // });
 
 // Authentication
-Route::get('/login', [AuthController::class, 'loginView'])->name('login-view');
-Route::post('/login', [AuthController::class, 'loginPost'])->name('login-post');
-Route::get('/register', [AuthController::class, 'registerView'])->name('register-view');
-Route::post('/register', [AuthController::class, 'registerView'])->name('register-post');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/login', [AuthController::class, 'loginView'])->name('login-view')->middleware('guest');
+Route::post('/login', [AuthController::class, 'loginPost'])->name('login-post')->middleware('guest');
+Route::get('/register', [AuthController::class, 'registerView'])->name('register-view')->middleware('guest');
+Route::post('/register', [AuthController::class, 'registerView'])->name('register-post')->middleware('guest');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth')->middleware('guest');
 
-Route::name('students.')->prefix('students')->group(function(){
+Route::name('students.')->middleware(['role:student,teacher', 'auth'])->prefix('students')->group(function(){
 
     Route::get('/', [StudentController::class, 'index'])->name('index');
 
@@ -43,7 +44,7 @@ Route::name('students.')->prefix('students')->group(function(){
     Route::delete('/{student}', [StudentController::class, 'destroy'])->name('destroy');
 });
 
-Route::name('teachers.')->prefix('teachers')->group(function(){
+Route::name('teachers.')->middleware(['role:teacher', 'auth'])->prefix('teachers')->group(function(){
 
     Route::get('/', [TeacherController::class, 'index'])->name('index');
 
@@ -60,7 +61,7 @@ Route::name('teachers.')->prefix('teachers')->group(function(){
     Route::delete('/{id}', [TeacherController::class, 'destroy'])->name('destroy');
 });
 
-Route::prefix('classes')->name('classes.')->group(function () {
+Route::prefix('classes')->middleware(['role:teacher', 'auth'])->name('classes.')->group(function () {
 
     Route::get('/', SchoolClass\IndexController::class)->name('index');
 
@@ -78,4 +79,4 @@ Route::prefix('classes')->name('classes.')->group(function () {
 });
 
 
-Route::resource('majors', MajorController::class);
+Route::resource('majors', MajorController::class)->middleware(['role:teacher', 'auth']);
